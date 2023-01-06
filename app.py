@@ -1,12 +1,13 @@
 
 from users import *
 from projects import *
+from waitress import serve
 
 from flask import Flask, request, jsonify
 
 app = Flask (__name__)
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET'])
 def home():
   return {'message':'api do portfólio: biasiportfolio.vercel.app'}
 
@@ -76,4 +77,5 @@ def add_new_project_on_table():
   except:
     return {'message':'usuario não autorizado'}
 
-app.run(port=5000, debug=False)
+
+serve(app, host='0.0.0.0', port=8080)

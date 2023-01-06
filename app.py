@@ -76,4 +76,4 @@ def add_new_project_on_table():
   except:
     return {'message':'usuario não autorizado'}
 
-app.run(port=5000, host='localhost', debug=True)
+app.run(port=5000, debug=True)

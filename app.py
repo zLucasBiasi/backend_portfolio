@@ -50,8 +50,9 @@ def login():
 
   if authenticate(email,password):
     token = authenticate(email,password)
+    data_user = show_user(email,password)
    
-    return jsonify({'message':'sucess','token':token})
+    return jsonify({'message':'sucess','token':token,'user':data_user})
 
   else:
     return jsonify({'message':'usuario ou senha invalidos'}),401
